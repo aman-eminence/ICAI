@@ -36,16 +36,15 @@ function DownloadModal(props) {
                   {downModal?.url ? (
                     <>
                       <img
-                        placeholder={downModal?.url}
                         src={downModal?.url}
                         alt="img"
                         width="100%"
                         onLoad={() => setImageloading(false)}
                       />
-                      {imageloading && loadingMessage()}
+                      {imageloading && loadingMessage(0)}
                     </>
                   ) : (
-                    loadingMessage(0)
+                    loadingMessage()
                   )}
                 </div>
               </div>

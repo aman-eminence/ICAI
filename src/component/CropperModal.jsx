@@ -64,13 +64,15 @@ function ImageCropper(props) {
               </div>
             </div>
           </div>
-          <Form.Range
-            step={0.1}
-            min={1}
-            max={10}
-            value={range}
-            onChange={(e) => setRange(e.target.value)}
-          />
+          <div className="mx-4">
+            <Form.Range
+              step={0.1}
+              min={1}
+              max={10}
+              value={range}
+              onChange={(e) => setRange(e.target.value)}
+            />
+          </div>
           <div className="col-md-12 footer_buttons">
             <button className="btn btn-default " onClick={() => handleClose()}>
               CLOSE !
