@@ -15,8 +15,8 @@ function ImageCropper(props) {
     setCroppedAreaPixels(croppedAreaPixels);
   }, []);
   const handleClose = () => {
-    setFormValue({ profile_null: "" });
-    setImageModal({ show: false });
+    setFormValue({ profile_null: "", profile: "" });
+    setImageModal({ show: false, url: "" });
   };
 
   const showCroppedImage = async () => {

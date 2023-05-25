@@ -9,11 +9,21 @@ function DownloadModal(props) {
   const [downloading, setDownloading] = useState(false);
   const [imageloading, setImageloading] = useState(true);
 
-  const handleClose = () => onCancel({ show: false });
+  const handleClose = () => onCancel({ show: false, url: "" });
   const downloadImage = async () => {
     await setDownloading(true);
     downloadProfileImage(downModal?.url, fileName, () => setDownloading(false));
   };
+
+  const loadingMessage = (h = "300px") => (
+    <div
+      className="d-flex justify-content-center align-items-end h-100"
+      style={{ minHeight: h }}
+    >
+      <h4 className="mx-2">Please Wait Image Is Loading ...</h4>
+      <Spinner />
+    </div>
+  );
 
   return (
     <>
@@ -22,7 +32,7 @@ function DownloadModal(props) {
           <div className="col-md-12 text-center">
             <div id="image_demo" className="croppie-container">
               <div className="cr-boundary">
-                <div className="_innerCr_Bx" style={{ minHeight: "300px" }}>
+                <div className="_innerCr_Bx">
                   {downModal?.url ? (
                     <>
                       <img
@@ -32,15 +42,10 @@ function DownloadModal(props) {
                         width="100%"
                         onLoad={() => setImageloading(false)}
                       />
-                      {imageloading && (
-                        <div className="d-flex justify-content-center">
-                          <h4 className="mx-2">Please Wait Image Is Loading ...</h4>
-                          <Spinner />
-                        </div>
-                      )}
+                      {imageloading && loadingMessage()}
                     </>
                   ) : (
-                    <Spinner />
+                    loadingMessage()
                   )}
                 </div>
               </div>

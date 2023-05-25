@@ -45,6 +45,7 @@ function Home() {
       setErrors("Designation should not exceed 20 characters");
       return;
     }
+    setDownloadModal({ show: true, url: "" });
     setloading(true);
     const res = await submitForm(formValue);
     if (res?.success) {
@@ -185,7 +186,7 @@ function Home() {
                           >
                             {/**/}
                             <span className="px-3">Submit</span>
-                            {loading && <Spinner />}
+                            {/* {loading && <Spinner />} */}
                           </button>
                         </div>
                       </div>
@@ -214,7 +215,12 @@ function Home() {
                   downModal={downModal}
                   onCancel={(obj) => {
                     setDownloadModal((s) => ({ ...s, ...obj }));
-                    setFormValue({ ...initialValue, profile_null: "" });
+                    setFormValue({
+                      ...initialValue,
+                      profile_null: "",
+                      profile_image: "",
+                      profile: "",
+                    });
                   }}
                   fileName={formValue?.name}
                 />
