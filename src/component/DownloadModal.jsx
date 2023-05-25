@@ -32,7 +32,7 @@ function DownloadModal(props) {
           <div className="col-md-12 text-center">
             <div id="image_demo" className="croppie-container">
               <div className="cr-boundary">
-                <div className="_innerCr_Bx">
+                <div className="_innerCr_Bx" style={{ minHeight: "300px" }}>
                   {downModal?.url ? (
                     <>
                       <img
@@ -45,7 +45,7 @@ function DownloadModal(props) {
                       {imageloading && loadingMessage()}
                     </>
                   ) : (
-                    loadingMessage()
+                    loadingMessage(0)
                   )}
                 </div>
               </div>
