@@ -152,14 +152,14 @@ function Home() {
                           <div className="frmCtl_head">
                             <label className="label">
                               <span className="label-text font-bold capitalize">
-                                region or branch
+                                region / branch / organisation
                                 <span className="text-red-500"> *</span>
                               </span>
                             </label>
                             <input
                               type="text"
                               autoComplete="off"
-                              placeholder="Your region or branch"
+                              placeholder="Your region / branch / organisation"
                               className="input input-bordered w-full max-w-sm"
                               name="region_or_branch"
                               value={formValue?.region_or_branch}
