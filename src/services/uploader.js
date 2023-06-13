@@ -16,7 +16,7 @@ export const submitForm = async (formData) => {
     "Content-Type": "multipart/form-data",
   };
   return axios
-    .post("https://apifincobox.sentientdigital.in/api/v1/gib/image", form, {
+    .post("https://getai.life/image", form, {
       headers,
     })
     .then((resp) => {

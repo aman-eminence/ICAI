@@ -48,8 +48,9 @@ function Home() {
     setDownloadModal({ show: true, url: "" });
     setloading(true);
     const res = await submitForm(formValue);
-    if (res?.success) {
-      setDownloadModal({ show: true, url: res?.results?.image_url });
+    console.log("resres",res)
+    if (res?.image_url) {
+      setDownloadModal({ show: true, url: res?.image_url });
     }
     setloading(false);
     setErrors("");
